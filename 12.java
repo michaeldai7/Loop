@@ -6,39 +6,20 @@ class Twelve {
 		Scanner sc = new Scanner(System.in);
 		int rows = sc.nextInt();
 		int[][] matrix = new int[rows][rows];
-		int length = 0;
-		int x = 0; //hang
+		int x = 0; // hang
 		int y = 0;// lie
-		int z = 0;// 
-		int a = 0;
-		int b = 0;
-		for (int i = 0; i < matrix.length; i++) {
-
-			/*while (z < matrix.length / 2) {
-				System.out.print(" ");
-				z++;
-			}*/
-			if (y == 0) {
+		while (x < rows + 1) {
+			if (y == 0 || y == x) {
 				matrix[x][y] = 1;
 			}
-			if (x % 2 == 0) {
-				matrix[x][(y/2)+a] =
+			else if(y == x){
+				matrix[x][y] = 1;
 			}
-
-
-
-
-
-
-
-
-
-			if (x % 2 == 0) {
-
+				else{
+				while (y < x -1) {
+					matrix[x][y] = matrix[x-1][y] + matrix[x-1][y - 1];
+				}
 			}
-			x++;
-			z = 0;
-			y = 0;
 
 		}
 	}
