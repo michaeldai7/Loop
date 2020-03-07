@@ -4,23 +4,40 @@ import java.util.*;
 class Twelve {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Please give an integer");
 		int rows = sc.nextInt();
-		int[][] matrix = new int[rows][rows];
-		int x = 0; // hang
-		int y = 0;// lie
-		while (x < rows + 1) {
-			if (y == 0 || y == x) {
-				matrix[x][y] = 1;
+		int[][] matrix = new int[rows + 1][rows + 1];
+		int j = 0;
+		// int space = rows/2;
+		int l = 0;
+		for (int i = 0; i < rows; i++) {
+			j = 0;
+			if (j == 0) {
+				matrix[i][j] = 1;
+				j++;
 			}
-			else if(y == x){
-				matrix[x][y] = 1;
+			if (j == i) {
+				matrix[i][j] = 1;
 			}
-				else{
-				while (y < x -1) {
-					matrix[x][y] = matrix[x-1][y] + matrix[x-1][y - 1];
-				}
+			while (j < i && i > 1 && j != 0 && j != i) {
+				matrix[i][j] = matrix[i - 1][j - 1] + matrix[i - 1][j];
+				j++;
+			}
+			if (j == i) {
+				matrix[i][j] = 1;
 			}
 
+		}
+		for (int i = 0; i < rows; i++) {
+			l = 0;
+			while (l < rows - i) {
+				System.out.print(" ");
+				l++;
+			}
+			for (int k = 0; k <= i; k++) {
+				System.out.print(matrix[i][k] + " ");
+			}
+			System.out.println(" ");
 		}
 	}
 }

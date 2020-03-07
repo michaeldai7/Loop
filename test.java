@@ -5,9 +5,10 @@ import java.io.PrintStream;
  */
 public class test {
     public static void main(String[] args) {
-        for(;;){
-            System.out.print("rua ");
-        }
+        int[][] matrix = new int[1][1];
+        int x = 0, y = 0;
+        matrix[x][y] = 1;
+        System.out.println(matrix[0][0]);
     }
     
 }
