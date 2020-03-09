@@ -1,7 +1,7 @@
 /**
  * 19
  */
-static char 
+static char  
 class nineteen {
     public static void main(String[] args) {
         
