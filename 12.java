@@ -25,7 +25,6 @@ class Twelve {
 			if (j == i) {
 				matrix[i][j] = 1;
 			}
-
 		}
 		for (int i = 0; i < rows; i++) {
 			l = 0;
@@ -37,6 +36,7 @@ class Twelve {
 				System.out.print(matrix[i][k] + " ");
 			}
 			System.out.println(" ");
+			
 		}
 	}
 }
